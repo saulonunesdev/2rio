@@ -1,0 +1,16 @@
+{
+  "name": "2rio",
+  "version": "0.0.1",
+  "description": "```bash docker images ```",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": {
+    "name": "Saulo Nunes",
+    "email": "saulo@paralink.com.br"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
