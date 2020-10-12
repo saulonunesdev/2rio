@@ -1,0 +1,26 @@
+version: "3"
+services:
+  2rio-db:
+    image: "postgres:11"
+    container_name: "2rio-db"
+    environment:
+      - POSTGRES_USER=2rio
+      - POSTGRES_PASSWORD=2rio
+      - POSTGRES_DB=2rio
+    ports:
+      - "5432:5432"
+    volumes:
+      - 2riodb-vol:/var/lib/postgresql/data
+      - ./docker/sql:/docker-entrypoint-initdb.d
+  2rio-server:
+    container_name: "2rio-server"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - 2rio-db
+volumes:
+  2riodb-vol:
+    driver: local
