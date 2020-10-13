@@ -1,9 +1,15 @@
 const express = require("express");
+const sequelize = require("./db.js");
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  console.log(
+    sequelize.query("Select * from Pessoa").then(function (a) {
+      console.log(a);
+      res.send(a);
+    })
+  );
 });
 
 app.listen(port, () => {

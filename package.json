@@ -10,7 +10,14 @@
     "email": "saulo@paralink.com.br"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saulonunesdev/2rio.git"
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
   }
 }
